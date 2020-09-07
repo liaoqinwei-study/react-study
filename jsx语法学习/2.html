@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div onClick="myClick(event,this)">点我</div>
+<!-- text/babel 测试:应该是严格模式的语法 -->
+<script type="text/babel">
+
+  function myClick(ev,t) {
+    console.log(t)
+  }
+</script>
+</body>
+</html>

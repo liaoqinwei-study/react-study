@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+
+<div id="app"></div>
+
+<script src="./js/react.development.js"></script>
+<script src="./js/react-dom.development.js"></script>
+<script src="js/babel.min.js"></script>
+
+<script type="text/babel">
+  /*let message = 'Hello World'
+  ReactDOM.render((<h2>{message}</h2>),document.querySelector('#app'))*/
+
+  /*========改变========*/
+  /*let message = 'hello world'
+  render()
+
+  function btnClick() {
+    message = '我是谁'
+    render()
+  }
+
+  function render() {
+    ReactDOM.render((<div>
+      <h2>{message}</h2>
+      <button onClick={btnClick}>点击我改变文本</button>
+    </div>), document.querySelector('#app'))
+  }*/
+
+  /*=====组件=========*/
+  class App extends React.Component {
+    constructor() {
+      // 调用父类构造器
+      super()
+      this.state = {
+        message: `I'am vary Happy！`
+      }
+    }
+
+    render() {
+      return (
+          <div>
+            <h2>{this.state.message}</h2>
+            <button onClick={this.btnClick.bind(this)}>点我改变文本</button>
+          </div>
+      )
+    }
+
+    btnClick() {
+      this.setState({
+        message:'你好世界'
+      })
+    }
+  }
+
+  ReactDOM.render(<App/>, document.querySelector('#app'))
+</script>
+</body>
+</html>
